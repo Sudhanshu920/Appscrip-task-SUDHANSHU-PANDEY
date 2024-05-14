@@ -106,11 +106,11 @@
 }
 
 .active{
-  width: 20%;
+  flex: 1;
 }
 
 .productListings {
-  flex: 1;
+  flex: 4;
   display: flex;
   justify-content: center;
 }
@@ -153,5 +153,13 @@
 
   .leftOpt h5{
     display: none;
+  }
+
+  .active{
+    flex: 1;
+  }
+  
+  .productListings {
+    flex: 2;
   }
 }
