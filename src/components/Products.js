@@ -122,7 +122,7 @@ const Products = () => {
     <div className={styles.productListing}>
       {products.map(product => (
         <div className={styles.product} key={product.id}>
-          <Image src={product.image} alt={product.name} width={200} height={250}/>
+          <Image src={product.image} alt={product.name} layout="responsive" width={200} height={250}/>
           <div className={styles.productDetails}>
             <h2>{product.name}</h2>
             <p>Sign in or create an account to see pricing</p>
