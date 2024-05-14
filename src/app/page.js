@@ -1,95 +1,128 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+import Image from 'next/image';
+import styles from './page.module.css';
+import Filtering from '@/components/Filtering';
+import Products from '@/components/Products';
+import Footer from '@/components/Footer';
+import { useState } from 'react';
 
 export default function Home() {
+  const [show, setShow] = useState(true);
+
+  function handleClick(){
+    setShow(!show);
+  }
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className={styles.container}>
+      <header>
+        <div className={styles.strip}>
+          <Image src="/loip.png" height={20} width={100} alt="strip-img" />
+          <Image src="/loip.png" height={20} width={100} alt="strip-img" />
+          <Image src="/loip.png" height={20} width={100} alt="strip-img" />
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <navbar className={styles.navbar}>
+          <div className={styles.logo}>
+            <div className={styles.logoImg}>
+            <Image src="/menu.png" height={40} width={40} alt="logo" className={styles.menu}/>
+            <Image src="/Logo.png" height={40} width={40} alt="logo" />
+            </div>
+            <a href="/" className={styles.logoName}>
+              LOGO
+            </a>
+            <ul className={styles.nav_list}>
+              <li>
+                <Image
+                  src="/search-normal.png"
+                  height={25}
+                  width={25}
+                  alt="strip-img"
+                />
+              </li>
+              <li>
+                <Image
+                  src="/heart.png"
+                  height={25}
+                  width={25}
+                  alt="strip-img"
+                />
+              </li>
+              <li>
+                <Image
+                  src="/shopping-bag.png"
+                  height={25}
+                  width={25}
+                  alt="strip-img"
+                />
+              </li>
+              <li>
+                <Image
+                  src="/profile.png"
+                  height={25}
+                  width={25}
+                  alt="strip-img"
+                />
+              </li>
+              <li>
+                <Image
+                  src="/Language.png"
+                  height={25}
+                  width={35}
+                  alt="strip-img"
+                />
+              </li>
+            </ul>
+          </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+          <div className={styles.links}>
+            <ul className={styles.links_list}>
+              <li>SHOP</li>
+              <li>SKILLS</li>
+              <li>STORIES</li>
+              <li>ABOUT</li>
+              <li>CONTACT US</li>
+            </ul>
+          </div>
+        </navbar>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        <hr className={styles.line} />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+        <div className={styles.desc}>
+          <h1 className={styles.descHeading}>DISCOVER OUR PRODUCTS</h1>
+          <p className={styles.descText}>
+            Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
+            scelerisque. Dolor integer scelerisque amet mi ut elementum
+            dolor. Lorem ipsum mii dolor sit amet.
           </p>
-        </a>
-      </div>
-    </main>
+        </div>
+      </header>
+
+      <section className={styles.hero}>
+        <hr className={styles.line} />
+        <div className={styles.options}>
+          <div className={styles.leftOpt}>
+            <h5>3425 items</h5>
+            <h4 onClick={handleClick}>{show ? 'HIDE FILTER' : 'SHOW FILTER'}</h4>
+          </div>
+          <h4>RECOMMENDED</h4>
+        </div>
+        <hr className={styles.line} />
+        <main>
+          <div
+            className={`${styles.filterOptions}   ${show ? styles.active : ''}`}
+          >
+            <Filtering show={show} />
+          </div>
+          <div className={styles.productListings}>
+            <Products />
+          </div>
+        </main>
+      </section>
+
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   );
 }

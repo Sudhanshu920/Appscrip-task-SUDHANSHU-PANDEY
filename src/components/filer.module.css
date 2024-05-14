@@ -1,0 +1,60 @@
+/* Style the dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 0%;
+    overflow: hidden;
+  }
+
+  .active{
+    width: 100%;
+  }
+
+  .category{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+  }
+  
+  /* Style the category name */
+  .category h3 {
+    margin: 0;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .category label{
+    font-size: 12px;
+    font-weight: 200;
+
+  }
+  
+  /* Style the options container */
+  .options {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 10px;
+    border-left: 2px solid #ddd;
+  }
+  
+  /* Show the options when the category is clicked */
+  .category.clicked .options {
+    max-height: 1000px; /* Adjust to a sufficiently large value */
+  }
+  
+  /* Style the filter options */
+  .optionCheckbox {
+    margin-right: 5px;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: max-content;
+  }
+  
+  .category hr{
+    margin-top: 10px;
+  }
