@@ -37,7 +37,7 @@ export default function Home() {
                   src="/search-normal.png"
                   height={25}
                   width={25}
-                  alt="strip-img"
+                  alt="search image"
                 />
               </li>
               <li>
@@ -45,7 +45,7 @@ export default function Home() {
                   src="/heart.png"
                   height={25}
                   width={25}
-                  alt="strip-img"
+                  alt="heart image"
                 />
               </li>
               <li>
@@ -53,7 +53,7 @@ export default function Home() {
                   src="/shopping-bag.png"
                   height={25}
                   width={25}
-                  alt="strip-img"
+                  alt="bag image"
                 />
               </li>
               <li>
@@ -61,7 +61,7 @@ export default function Home() {
                   src="/profile.png"
                   height={25}
                   width={25}
-                  alt="strip-img"
+                  alt="profile image"
                 />
               </li>
               <li>
@@ -69,7 +69,7 @@ export default function Home() {
                   src="/Language.png"
                   height={25}
                   width={60}
-                  alt="strip-img"
+                  alt="language image"
                 />
               </li>
             </ul>
