@@ -24,9 +24,9 @@ export default function Home() {
 
         <navbar className={styles.navbar}>
           <div className={styles.logo}>
-            <div className={styles.logoImg}>
+            <div className={styles.navImg}>
             <Image src="/menu.png" height={40} width={40} alt="logo" className={styles.menu}/>
-            <Image src="/Logo.png" height={40} width={40} alt="logo" />
+            <Image src="/Logo.png" height={40} width={40} alt="logo" className={styles.logoImg}/>
             </div>
             <a href="/" className={styles.logoName}>
               LOGO
@@ -68,7 +68,7 @@ export default function Home() {
                 <Image
                   src="/Language.png"
                   height={25}
-                  width={35}
+                  width={60}
                   alt="strip-img"
                 />
               </li>
